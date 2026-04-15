@@ -137,3 +137,14 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# --- Dashboard IA: datos locales del usuario ---
+# Estos archivos contienen datos reales del usuario (conversaciones, proyectos,
+# IAs configuradas, transcripciones). NO deben subirse al repo público.
+conversaciones.json
+ias.json
+proyectos.json
+transcripciones.json
+transcripciones/
+datos/
+*.local.json

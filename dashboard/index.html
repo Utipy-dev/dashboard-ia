@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard IA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="app">
+
+    <header id="header">
+      <div id="header-content">
+        <h1>Dashboard IA</h1>
+        <div id="ia-tabs"></div>
+        <div id="header-actions">
+          <button id="btn-abrir-datos" class="btn-primary">Abrir carpeta de datos</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sin pantalla inicial: el botón de cabecera es el punto de entrada -->
+
+    <!-- Layout principal: galería izquierda + panel derecho -->
+    <div id="main" hidden>
+      <div id="panel-galeria">
+        <div id="ia-content"></div>
+      </div>
+      <div id="panel-conversacion" hidden>
+        <div id="panel-conv-header">
+          <button class="btn-icono" id="btn-cerrar-panel" onclick="App.cerrarPanel()" title="Cerrar">✕</button>
+        </div>
+        <div id="panel-conv-contenido"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="storage/storage.js"></script>
+  <script src="components/ia-card.js"></script>
+  <script src="components/tema-item.js"></script>
+  <script src="components/conversacion-card.js"></script>
+  <script src="components/proyecto-card.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
