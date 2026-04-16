@@ -108,6 +108,12 @@ Arquitectura pendiente de decidir. Se publicará mostrando el desarrollo por eta
 
 ---
 
+## Novedades para el Director
+
+- **Skill `/estructurar-etapas` creada** en `utipy/.claude/skills/estructurar-etapas/`. Permite planificar cualquier proyecto en etapas y bloques con validación paso a paso con Arturo. Reutilizable para cualquier proyecto del workspace. Pendiente de depuración.
+
+---
+
 ## Planificación (referencia)
 
 Planificación completa de todas las etapas en `planificacion/`. Cada bloque tiene narrativa, decisiones técnicas, DoD y notas para el agente.
