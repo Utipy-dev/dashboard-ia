@@ -108,7 +108,22 @@ Arquitectura pendiente de decidir. Se publicará mostrando el desarrollo por eta
 
 ---
 
+## Planificación (referencia)
+
+Planificación completa de todas las etapas en `planificacion/`. Cada bloque tiene narrativa, decisiones técnicas, DoD y notas para el agente.
+
+- `planificacion/versiones.md` — índice maestro con todos los tags
+- `planificacion/onboarding-agente.md` — guía para agentes nuevos
+- `planificacion/etapas/etapa-1/` — 4 bloques retrospectivos (done)
+- `planificacion/etapas/etapa-2/` — 13 bloques (2.0-2.12) detallados
+- `planificacion/etapas/etapa-3/` — 12 bloques (3.0-3.11) detallados
+- `planificacion/etapas/etapa-4-5/` — 6 bloques de horizonte lejano
+
+Repositorio público: `github.com/Utipy-dev/dashboard-ia`
+
+---
+
 ## Gestor
 
 **Plazos:** Sin fecha límite definida. Urgencia relativa: la parte del skill/cola es replicable.
-**Próximo paso:** Sesión con Comercial + operario para redefinir etapas y estrategia GitHub antes de iniciar Etapa 2.
+**Próximo paso:** Iniciar Etapa 2 (bloque 2.0 — servidor base). Sesión con Comercial para alinear estrategia GitHub antes de publicar.
