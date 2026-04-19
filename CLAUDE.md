@@ -1,31 +1,29 @@
-# Dashboard IA
-
-Gestor de conversaciones con IA. Etapa 1: HTML/CSS/JS vanilla, JSON local. Etapa 2+: localhost.
-
-## Agente
-- `constructor` — implementa por etapas sobre arquitectura escalable
-
-## Fuentes
-- `.claude/especificacion.md` — especificación técnica completa
-- `operaciones/estado.md` — fase actual, tareas y próximo paso
-
-## Estado actual
-**Etapa 1 completa y funcional.** Se abre `dashboard/index.html` en Chrome.
-
-Incluye: layout, cronómetro (ciclo editable), temas, mensajes, imágenes en panel lateral 20%/texto 80%, juntar notas, modal "Preparar envío", botones copiar texto/imágenes por mensaje.
-
-## Mapa de etapas
-- **Etapa 1** (completa): HTML/CSS/JS vanilla, sin servidor
-- **Etapa 2** (~2€): localhost — captura desde interfaz de IA, envío programado, documentos
-- **Etapa 3** (~4€): sincronización móvil por WiFi
-- **Etapas 4-5**: transcriptor propio integrado (voz + escritura mezclados)
-
-## Próximo paso
-1. Resolver persistencia: mover carpeta `Proyectos` fuera de `Documentos` (OneDrive)
-2. Borde en bloques de mensaje (estético menor)
-3. Iniciar Etapa 2 (localhost)
-
+---
+identidad: n3-principal
+rol: principal
 ---
 
-## Sistema
-Cargar `sistema/protocolo.md` (raíz de utipy) al inicio de cada conversación.
+Lee `../sistema/protocolo.md` antes de continuar.
+
+# Dashboard IA
+
+Gestor personal de conversaciones con IA. E1: HTML/CSS/JS vanilla. E2+: localhost Node.
+
+## Contexto
+Navega `contexto/` en cascada: `indice.md` → `directorio.md` → `general.md` si hace falta.
+
+## Estado actual
+**E1 completa y funcional.** Abre `dashboard/index.html` en Chrome.
+
+## Estructura de código
+El código fuente vive en `src/` (dashboard, servidor, extensión). Los archivos de proyecto (planificacion/, operaciones/, contexto/) quedan en la raíz.
+
+## Skills
+Las skills del proyecto están en `utipy/.claude/skills/`. Pueden no aparecer en el menú de comandos — búscalas con Grep antes de asumir que no existen. Relevantes para este proyecto: `/estructurar-etapas`.
+
+## Git
+Este proyecto usa git con commits y push normales. No usar `--no-verify` ni omitir commits por el bug conocido de Claude Code con git — si hay error, reportar.
+
+## Próximo paso
+1. Iniciar E2 (bloque 2.0 — servidor base)
+2. Sesión con Comercial para alinear estrategia GitHub

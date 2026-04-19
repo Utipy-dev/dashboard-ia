@@ -3,6 +3,10 @@
 ## Fase actual
 **Etapa 1 completada + imágenes + juntar notas**
 
+**Actualización sistema:** 2026-04-17 — bloques 1,2,3,4,6,7,8 aplicados. Creada `contexto/` (indice, directorio, general). CLAUDE.md con frontmatter identidad/rol y carga de protocolo.md. settings.json con additionalDirectories.
+
+**Actualización sistema:** 2026-04-19 — convención `src/` para código fuente. Git: este proyecto sigue con commits normales (bug Claude Code conocido, reportado). Skills: detectar desde `utipy/.claude/skills/` aunque no aparezcan en menú.
+
 El dashboard es funcional. Se abre `dashboard/index.html` en Chrome, se selecciona la carpeta de datos y funciona sin servidor.
 
 ---
