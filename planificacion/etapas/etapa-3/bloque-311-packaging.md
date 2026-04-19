@@ -26,9 +26,9 @@ Este bloque no construye funcionalidad nueva — convierte la funcionalidad de e
 
 ### Actualizar scripts de instalación
 
-- **`packaging/windows/build.sh`:** incluir `mkcert.exe` en el bundle
-- **`packaging/windows/installer.nsi`:** añadir paso de instalación de `mkcert` + generación de cert
-- **`packaging/macos/build.sh`:** idem con `brew install mkcert` o binario incluido
+- **`src/packaging/windows/build.sh`:** incluir `mkcert.exe` en el bundle
+- **`src/packaging/windows/installer.nsi`:** añadir paso de instalación de `mkcert` + generación de cert
+- **`src/packaging/macos/build.sh`:** idem con `brew install mkcert` o binario incluido
 - **Todos:** añadir step de "instalar Claude Code CLI (opcional)" con prompt sí/no
 
 ### Documentación actualizada
@@ -62,15 +62,15 @@ Este bloque no construye funcionalidad nueva — convierte la funcionalidad de e
 
 ## Archivos afectados
 
-- `packaging/windows/build.sh` — actualizar
-- `packaging/windows/installer.nsi` — actualizar
-- `packaging/macos/build.sh` — actualizar
-- `packaging/linux/build.sh` — actualizar
+- `src/packaging/windows/build.sh` — actualizar
+- `src/packaging/windows/installer.nsi` — actualizar
+- `src/packaging/macos/build.sh` — actualizar
+- `src/packaging/linux/build.sh` — actualizar
 - `INSTALL.md` — actualizar con nuevas secciones
 - `FAQ.md` — actualizar con nuevas entradas
-- `extension/manifest.json` — version bump
-- `dashboard/components/qr-movil.js` — nuevo
-- `servidor/package.json` — añadir `qrcode`
+- `src/extension/manifest.json` — version bump
+- `src/dashboard/components/qr-movil.js` — nuevo
+- `src/servidor/package.json` — añadir `qrcode`
 
 ## Criterios de terminado (DoD)
 

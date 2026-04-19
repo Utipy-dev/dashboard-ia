@@ -46,11 +46,11 @@ Es también el primer bloque donde el móvil no es solo visualización sino cont
 
 ## Archivos afectados
 
-- `servidor/src/routes/scheduler.js` — añadir DELETE si falta
-- `servidor/src/ws/broadcaster.js` — asegurar emit en cambios de scheduler
-- `dashboard/movil/pantalla-pendientes.js` — nuevo
-- `dashboard/movil/widget-sesiones.js` — nuevo
-- `dashboard/movil/index.html` — añadir navegación a pantalla pendientes
+- `src/servidor/src/routes/scheduler.js` — añadir DELETE si falta
+- `src/servidor/src/ws/broadcaster.js` — asegurar emit en cambios de scheduler
+- `src/dashboard/movil/pantalla-pendientes.js` — nuevo
+- `src/dashboard/movil/widget-sesiones.js` — nuevo
+- `src/dashboard/movil/index.html` — añadir navegación a pantalla pendientes
 
 ## Criterios de terminado (DoD)
 

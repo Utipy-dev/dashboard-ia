@@ -74,10 +74,10 @@ Sustituir los placeholders de la extensión y del dashboard. Iconos que encajen 
 
 ## Archivos afectados
 
-- `packaging/**` — nuevo
+- `src/packaging/**` — nuevo
 - `INSTALL.md` — nuevo
 - `FAQ.md` — nuevo
-- Iconos en `extension/icons/` y `dashboard/assets/` — sustituidos
+- Iconos en `src/extension/icons/` y `src/dashboard/assets/` — sustituidos
 - `README.md` — actualizar con enlaces a los releases
 
 ## Criterios de terminado (DoD)

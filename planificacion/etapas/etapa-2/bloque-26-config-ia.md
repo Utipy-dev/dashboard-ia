@@ -44,11 +44,11 @@ También es el sitio donde la comunidad contribuye al proyecto: cuando Claude ca
 
 ## Archivos afectados
 
-- `dashboard/components/config-ia.js` — nuevo
-- `dashboard/app.js` — rutas a la sección de config
-- `servidor/src/storage/schemas/ia.js` — ampliado
-- `servidor/src/routes/ias.js` — añadir subrecursos
-- `extension/content/content-script.js` — leer config del servidor al cargar
+- `src/dashboard/components/config-ia.js` — nuevo
+- `src/dashboard/app.js` — rutas a la sección de config
+- `src/servidor/src/storage/schemas/ia.js` — ampliado
+- `src/servidor/src/routes/ias.js` — añadir subrecursos
+- `src/extension/content/content-script.js` — leer config del servidor al cargar
 
 ## Criterios de terminado (DoD)
 
@@ -70,7 +70,7 @@ También es el sitio donde la comunidad contribuye al proyecto: cuando Claude ca
 
 ## Notas para el agente
 
-- **Los selectores iniciales para Claude/ChatGPT/Gemini van como presets por defecto.** Crea `servidor/src/storage/presets-ias.json` con los selectores verificados al momento del bloque. El usuario puede importarlos con un clic.
+- **Los selectores iniciales para Claude/ChatGPT/Gemini van como presets por defecto.** Crea `src/servidor/src/storage/presets-ias.json` con los selectores verificados al momento del bloque. El usuario puede importarlos con un clic.
 - **`contenteditable` vs `<textarea>` vs `<input>`.** Claude usa `contenteditable`. ChatGPT usa `<textarea>`. La lógica de lectura del texto es diferente (`innerText` vs `value`). Documéntalo en los presets.
 - **El botón "probar" necesita comunicación bidireccional extensión ↔ servidor.** La forma más simple es que el servidor anote "solicito prueba del selector X en la pestaña Y" y la extensión lo consulte con polling cada segundo. En etapa 3 con WebSocket se simplifica.
 

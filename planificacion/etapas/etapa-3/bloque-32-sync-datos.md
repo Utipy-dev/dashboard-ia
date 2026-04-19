@@ -59,12 +59,12 @@ La sincronización tiene que ser práctica, no teórica perfecta. El producto co
 
 ## Archivos afectados
 
-- `servidor/src/ws/broadcaster.js` — extender con `emitDelta` y `handleSubscribe`
-- `servidor/src/routes/mensajes.js` — llamar broadcaster tras cada write
-- `servidor/src/routes/proyectos.js` — ídem
-- `servidor/src/routes/conversaciones.js` — ídem
-- `dashboard/sync-manager.js` — nuevo (PC)
-- `dashboard/movil/sync-manager.js` — nuevo (móvil) o importar el mismo
+- `src/servidor/src/ws/broadcaster.js` — extender con `emitDelta` y `handleSubscribe`
+- `src/servidor/src/routes/mensajes.js` — llamar broadcaster tras cada write
+- `src/servidor/src/routes/proyectos.js` — ídem
+- `src/servidor/src/routes/conversaciones.js` — ídem
+- `src/dashboard/sync-manager.js` — nuevo (PC)
+- `src/dashboard/movil/sync-manager.js` — nuevo (móvil) o importar el mismo
 
 ## Criterios de terminado (DoD)
 

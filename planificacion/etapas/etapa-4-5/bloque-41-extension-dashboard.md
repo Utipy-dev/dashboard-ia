@@ -23,9 +23,9 @@ Es la diferencia entre "el dashboard está al lado" y "el dashboard está integr
 
 ## Qué hay que construir
 
-- `extension/content/integrador.js` — nuevo: puente entre página y panel
-- `extension/side-panel/panel.js` — escuchar eventos del content script y actualizar UI
-- `dashboard/components/ia-activa.js` — componente que muestra contexto de la IA activa actual
+- `src/extension/content/integrador.js` — nuevo: puente entre página y panel
+- `src/extension/side-panel/panel.js` — escuchar eventos del content script y actualizar UI
+- `src/dashboard/components/ia-activa.js` — componente que muestra contexto de la IA activa actual
 - Indicadores CSS no intrusivos inyectados en páginas de IA
 
 ## Criterios de terminado (DoD)

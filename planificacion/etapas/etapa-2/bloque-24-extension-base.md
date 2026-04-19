@@ -70,11 +70,11 @@ extension/
 
 ## Archivos afectados
 
-- `extension/**` — todo nuevo
+- `src/extension/**` — todo nuevo
 
 ## Criterios de terminado (DoD)
 
-- [ ] La extensión se carga en Chrome en modo desarrollo (`chrome://extensions` → Load unpacked → seleccionar `extension/`)
+- [ ] La extensión se carga en Chrome en modo desarrollo (`chrome://extensions` → Load unpacked → seleccionar `src/extension/`)
 - [ ] El popup muestra el estado real del servidor (verde si arriba, rojo si no)
 - [ ] El botón "Abrir dashboard" abre `localhost:3333/` en una nueva pestaña
 - [ ] No hay errores en la consola del service worker
@@ -85,7 +85,7 @@ extension/
 
 1. Abre Chrome → `chrome://extensions`
 2. Activa "Modo de desarrollador"
-3. "Cargar descomprimida" → selecciona la carpeta `extension/`
+3. "Cargar descomprimida" → selecciona la carpeta `src/extension/`
 4. Aparece el icono en la barra
 5. Clic en el icono → ves el estado del servidor
 

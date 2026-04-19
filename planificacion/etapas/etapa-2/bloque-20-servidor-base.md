@@ -49,12 +49,12 @@ GET /health
 
 ## Archivos afectados
 
-- `servidor/package.json` — nuevo
-- `servidor/src/index.js` — nuevo
-- `servidor/src/config.js` — nuevo
-- `servidor/src/routes/health.js` — nuevo
-- `servidor/README.md` — nuevo
-- `.gitignore` raíz — añadir `servidor/node_modules/`
+- `src/servidor/package.json` — nuevo
+- `src/servidor/src/index.js` — nuevo
+- `src/servidor/src/config.js` — nuevo
+- `src/servidor/src/routes/health.js` — nuevo
+- `src/servidor/README.md` — nuevo
+- `.gitignore` raíz — añadir `src/servidor/node_modules/`
 
 ## Criterios de terminado (DoD)
 

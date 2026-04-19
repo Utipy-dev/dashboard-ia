@@ -63,30 +63,30 @@ GET  /api/cola/estado    — { corriendo, pausado, tarea_activa_id, pendientes_c
 
 ## Qué hay que construir
 
-- **`servidor/src/cola/runner.js`:**
+- **`src/servidor/src/cola/runner.js`:**
   - Loop: `while (corriendo && !pausado) { tarea = cogerSiguiente(); ejecutar(tarea); }`
   - Gestión de estado (corriendo/pausado/tarea_activa)
   - Reintento único con espera de 30s
   - Broadcast de cada cambio de estado
 
-- **`servidor/src/cola/ejecutores/index.js`:** despachador según modo
-- **`servidor/src/cola/ejecutores/stub.js`:** implementación stub para probar el runner
+- **`src/servidor/src/cola/ejecutores/index.js`:** despachador según modo
+- **`src/servidor/src/cola/ejecutores/stub.js`:** implementación stub para probar el runner
 
-- **`servidor/src/routes/cola.js`** (extender 3.4):
+- **`src/servidor/src/routes/cola.js`** (extender 3.4):
   - Añadir `POST /api/cola/iniciar`, `pausar`, `reanudar`, `GET /api/cola/estado`
 
-- **`dashboard/components/cola-controls.js`:**
+- **`src/dashboard/components/cola-controls.js`:**
   - Botones "Iniciar", "Pausar", "Reanudar"
   - Estado visual: barra de progreso, tarea activa en curso, tiempo estimado
 
 ## Archivos afectados
 
-- `servidor/src/cola/runner.js` — nuevo
-- `servidor/src/cola/ejecutores/index.js` — nuevo
-- `servidor/src/cola/ejecutores/stub.js` — nuevo (temporal)
-- `servidor/src/routes/cola.js` — extender
-- `servidor/src/index.js` — registrar runner al arrancar
-- `dashboard/components/cola-controls.js` — nuevo
+- `src/servidor/src/cola/runner.js` — nuevo
+- `src/servidor/src/cola/ejecutores/index.js` — nuevo
+- `src/servidor/src/cola/ejecutores/stub.js` — nuevo (temporal)
+- `src/servidor/src/routes/cola.js` — extender
+- `src/servidor/src/index.js` — registrar runner al arrancar
+- `src/dashboard/components/cola-controls.js` — nuevo
 
 ## Criterios de terminado (DoD)
 

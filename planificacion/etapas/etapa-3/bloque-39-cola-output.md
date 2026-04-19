@@ -17,7 +17,7 @@ El resumen automático es el valor añadido clave: cuando tienes 10 tareas ejecu
 
 ## Decisiones técnicas
 
-- **Output en `servidor/data/outputs/<tarea_id>/respuesta.md`.** Mismo patrón de directorio que los documentos. La ruta se guarda en `tarea.output_ruta`.
+- **Output en `src/servidor/data/outputs/<tarea_id>/respuesta.md`.** Mismo patrón de directorio que los documentos. La ruta se guarda en `tarea.output_ruta`.
 - **El `.md` incluye metadatos en frontmatter YAML.** Fecha, nombre de la tarea, IA usada, modo. Permite filtrar y buscar después.
 - **El resumen se genera con otra llamada a `claude -p`.** Se le pasa el output y se pide "resume en 2-3 frases". Es una llamada extra (gasto de tokens), pero el resumen es genuinamente útil. Configurable: si `generar_resumen: false`, se omite.
 - **Notificación nativa del OS al terminar.** Usando `node-notifier` (npm) o el comando nativo:
@@ -51,7 +51,7 @@ La propuesta tiene una estructura sólida, pero identifico tres áreas de mejora
 
 ## Qué hay que construir
 
-### `servidor/src/cola/output-manager.js`
+### `src/servidor/src/cola/output-manager.js`
 
 ```js
 export async function guardarOutput(tarea, outputRaw) {
@@ -71,7 +71,7 @@ export async function guardarOutput(tarea, outputRaw) {
 }
 ```
 
-### `servidor/src/cola/notificador.js`
+### `src/servidor/src/cola/notificador.js`
 
 - Detecta OS (`process.platform`)
 - Llama al comando nativo o `node-notifier`
@@ -85,15 +85,15 @@ export async function guardarOutput(tarea, outputRaw) {
 
 ## Archivos afectados
 
-- `servidor/src/cola/output-manager.js` — nuevo
-- `servidor/src/cola/notificador.js` — nuevo
-- `servidor/src/cola/runner.js` — llamar `guardarOutput` al terminar cada tarea
-- `servidor/package.json` — añadir `node-notifier`
-- `dashboard/components/cola-dashboard.js` — añadir link "Ver output" y sección outputs recientes
+- `src/servidor/src/cola/output-manager.js` — nuevo
+- `src/servidor/src/cola/notificador.js` — nuevo
+- `src/servidor/src/cola/runner.js` — llamar `guardarOutput` al terminar cada tarea
+- `src/servidor/package.json` — añadir `node-notifier`
+- `src/dashboard/components/cola-dashboard.js` — añadir link "Ver output" y sección outputs recientes
 
 ## Criterios de terminado (DoD)
 
-- [ ] Al terminar una tarea, se crea `servidor/data/outputs/<id>/respuesta.md` con frontmatter correcto
+- [ ] Al terminar una tarea, se crea `src/servidor/data/outputs/<id>/respuesta.md` con frontmatter correcto
 - [ ] El resumen de 2-3 líneas es coherente con el contenido (verificar manualmente)
 - [ ] Notificación nativa del sistema aparece en Windows al terminar una tarea
 - [ ] Link "Ver output" desde el dashboard abre el archivo

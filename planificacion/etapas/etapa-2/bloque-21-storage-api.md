@@ -79,10 +79,10 @@ servidor/src/
 
 ## Archivos afectados
 
-- `servidor/src/storage/**` — nuevos
-- `servidor/src/routes/**` — nuevos
-- `servidor/src/plugins/cors.js` — nuevo
-- `servidor/package.json` — añadir `@fastify/cors`, `ajv-formats`
+- `src/servidor/src/storage/**` — nuevos
+- `src/servidor/src/routes/**` — nuevos
+- `src/servidor/src/plugins/cors.js` — nuevo
+- `src/servidor/package.json` — añadir `@fastify/cors`, `ajv-formats`
 
 ## Criterios de terminado (DoD)
 

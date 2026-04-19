@@ -36,7 +36,7 @@ Es también una demo perfecta del valor del producto en medio minuto: llegas, pu
 
 - Schema de mensaje: añadir `origen: "manual" | "captura" | "reserva"`
 - El scheduler trata los mensajes de reserva igual que cualquier otro programado — solo cambia el origen para UI.
-- Plantilla de reserva por defecto en `servidor/src/config.js`, configurable por IA.
+- Plantilla de reserva por defecto en `src/servidor/src/config.js`, configurable por IA.
 
 ### Aprovechar para UX
 
@@ -44,11 +44,11 @@ Es también una demo perfecta del valor del producto en medio minuto: llegas, pu
 
 ## Archivos afectados
 
-- `dashboard/components/reservar-sesion.js` — nuevo
-- `dashboard/components/panel-sesiones.js` — nuevo
-- `dashboard/app.js` — integración
-- `servidor/src/config.js` — plantilla por defecto
-- `servidor/src/storage/schemas/mensaje.js` — campo `origen`
+- `src/dashboard/components/reservar-sesion.js` — nuevo
+- `src/dashboard/components/panel-sesiones.js` — nuevo
+- `src/dashboard/app.js` — integración
+- `src/servidor/src/config.js` — plantilla por defecto
+- `src/servidor/src/storage/schemas/mensaje.js` — campo `origen`
 
 ## Criterios de terminado (DoD)
 

@@ -19,14 +19,14 @@ Este bloque no añade funcionalidad. Elimina. Y es tan importante como los que a
 
 ### Código heredado de etapa 1
 
-- **`dashboard/storage/storage.js`** — después del bloque 2.2 debería estar limpio, pero revisar que no queden comentarios o ramas muertas
+- **`src/dashboard/storage/storage.js`** — después del bloque 2.2 debería estar limpio, pero revisar que no queden comentarios o ramas muertas
 - **Gestión de imágenes en base64 dentro de JSON** — ahora que hay servidor, las imágenes podrían vivir como archivos separados igual que los documentos. Evaluación: ¿lo hacemos o lo dejamos para etapa 3? *Recomendación: dejarlo a menos que haya problemas de rendimiento medibles.*
 - **Modal "Preparar envío"** — con captura automática y envío programado, este modal es opcional. Evaluar si se convierte en "preview" sin botones de copiado, o se elimina y se deja solo la captura/envío.
 - **Lógica de "conversación activa"** — se introdujo en 2.5 como concepto nuevo. Revisar que sea consistente en todas las vistas.
 
 ### Duplicación entre bloques de etapa 2
 
-- **Handlers de `fetch` a la API** — si cada componente hace su propio fetch, considerar un pequeño cliente API centralizado en `dashboard/api-client.js`.
+- **Handlers de `fetch` a la API** — si cada componente hace su propio fetch, considerar un pequeño cliente API centralizado en `src/dashboard/api-client.js`.
 - **Schemas JSON** — verificar que el schema del servidor y el del cliente no diverjan.
 - **Estilos de modales** — los modales de preparar envío, programar envío y reservar sesión comparten 80% de estilos. Extraer a una clase común.
 - **Toasts y feedback visual** — si hay tres implementaciones de toast (extensión, dashboard, respuesta del scheduler), unificarlas.

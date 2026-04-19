@@ -17,7 +17,7 @@ El servidor local puede resolver esto que el navegador no puede. Copia los archi
 
 ## Decisiones técnicas
 
-- **Carpeta temporal `servidor/data/clipboard-temp/`**, limpiada al arrancar el servidor. Razón: no dejar archivos huérfanos. No persistir temporales.
+- **Carpeta temporal `src/servidor/data/clipboard-temp/`**, limpiada al arrancar el servidor. Razón: no dejar archivos huérfanos. No persistir temporales.
 - **Invocación del portapapeles del sistema depende del OS.** Razón:
   - **Windows:** PowerShell con `Set-Clipboard -Path` (copia archivos reales)
   - **macOS:** `osascript` con `tell application "Finder"` o `pbcopy` con modificación
@@ -34,7 +34,7 @@ El servidor local puede resolver esto que el navegador no puede. Copia los archi
   - Copia los archivos a `data/clipboard-temp/<timestamp>/`
   - Invoca el comando nativo según OS
   - Devuelve: `{ ok: true, ruta_temp }` o `{ ok: false, motivo, ruta_temp }` (ruta siempre, para fallback)
-- **Helper `servidor/src/services/clipboard.js`:** abstrae la diferencia entre OS.
+- **Helper `src/servidor/src/services/clipboard.js`:** abstrae la diferencia entre OS.
 - **Limpieza**: al arrancar, borrar `data/clipboard-temp/` entero.
 
 ### En el dashboard
@@ -44,11 +44,11 @@ El servidor local puede resolver esto que el navegador no puede. Copia los archi
 
 ## Archivos afectados
 
-- `servidor/src/routes/clipboard.js` — nuevo
-- `servidor/src/services/clipboard.js` — nuevo
-- `servidor/src/index.js` — limpiar temp al arrancar
-- `dashboard/app.js` — handler del botón
-- `dashboard/components/modal-envio.js` — botón nuevo
+- `src/servidor/src/routes/clipboard.js` — nuevo
+- `src/servidor/src/services/clipboard.js` — nuevo
+- `src/servidor/src/index.js` — limpiar temp al arrancar
+- `src/dashboard/app.js` — handler del botón
+- `src/dashboard/components/modal-envio.js` — botón nuevo
 
 ## Criterios de terminado (DoD)
 

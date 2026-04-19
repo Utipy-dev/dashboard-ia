@@ -57,7 +57,7 @@ El historial cross-IA es la respuesta: un feed cronológico de todo, con búsque
 
 ### En el dashboard
 
-- **`dashboard/components/historial.js`:**
+- **`src/dashboard/components/historial.js`:**
   - Barra de búsqueda con debounce (300ms)
   - Selector de filtros
   - Lista de resultados con scroll infinito (IntersectionObserver)
@@ -67,10 +67,10 @@ El historial cross-IA es la respuesta: un feed cronológico de todo, con búsque
 
 ## Archivos afectados
 
-- `servidor/src/routes/historial.js` — nuevo
-- `servidor/src/index.js` — registrar ruta
-- `dashboard/components/historial.js` — nuevo
-- `dashboard/app.js` — añadir navegación al historial
+- `src/servidor/src/routes/historial.js` — nuevo
+- `src/servidor/src/index.js` — registrar ruta
+- `src/dashboard/components/historial.js` — nuevo
+- `src/dashboard/app.js` — añadir navegación al historial
 
 ## Criterios de terminado (DoD)
 

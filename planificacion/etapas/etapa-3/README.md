@@ -60,4 +60,4 @@ Los bloques 3.0-3.3 y 3.4-3.9 son semi-independientes entre sí: WebSocket (3.0)
 > "Tengo 6 tareas para Claude Code. Antes las ejecutaba una a una, esperando cada respuesta. Ahora las meto en cola, voy al móvil, y cuando vuelvo están todas resueltas con su `.md` de resultado."
 
 **Técnico:**
-> WebSocket con `@fastify/websocket`. Cola en `servidor/data/cola/` como JSON. Runner con `child_process.spawn('claude', ['-p', mensaje])`. PWA en `dashboard/movil/`. TLS con `mkcert localhost 192.168.X.X`.
+> WebSocket con `@fastify/websocket`. Cola en `src/servidor/data/cola/` como JSON. Runner con `child_process.spawn('claude', ['-p', mensaje])`. PWA en `src/dashboard/movil/`. TLS con `mkcert localhost 192.168.X.X`.

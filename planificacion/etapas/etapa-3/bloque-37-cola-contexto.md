@@ -20,7 +20,7 @@ El modo contexto automatiza lo que el usuario haría a mano: copiar el contenido
 - **El contexto se incrusta como texto, no como archivo adjunto.** Razón: `claude -p` no tiene interfaz gráfica para adjuntar archivos. El contexto se inyecta como texto antes del mensaje en el mismo string que se pasa a `claude -p`. Formato: `"## Contexto\n\n<contenido>\n\n---\n\n## Tarea\n\n<mensaje>"`.
 - **PDFs se convierten a texto en el servidor.** Usando `pdf-parse` (npm). No perfect pero suficiente para la mayoría de documentos. Si falla la conversión, la tarea falla con error claro en lugar de enviar el binario.
 - **Límite de tamaño de contexto: 100KB de texto.** Claude Code tiene un límite de contexto. 100KB de texto son ~25.000 palabras, más que suficiente para la mayoría de documentos. Si el archivo supera ese límite, la tarea falla con `"Archivo demasiado grande para contexto (máx. 100KB)"`.
-- **`contexto_ruta` apunta a un archivo de `servidor/data/documentos/`.** Es el mismo sistema de storage de 2.7. No hay rutas arbitrarias del sistema de archivos del usuario por seguridad.
+- **`contexto_ruta` apunta a un archivo de `src/servidor/data/documentos/`.** Es el mismo sistema de storage de 2.7. No hay rutas arbitrarias del sistema de archivos del usuario por seguridad.
 
 ## Template de prompt con contexto
 
@@ -42,7 +42,7 @@ Especialmente en la sección de presupuesto.
 
 ## Qué hay que construir
 
-### `servidor/src/cola/ejecutores/contexto.js`
+### `src/servidor/src/cola/ejecutores/contexto.js`
 
 ```js
 import { leerContexto } from '../contexto-loader.js'
@@ -64,7 +64,7 @@ export async function ejecutarContexto(tarea) {
 }
 ```
 
-### `servidor/src/cola/contexto-loader.js`
+### `src/servidor/src/cola/contexto-loader.js`
 
 ```js
 // Lee el archivo, lo convierte a texto si es PDF, verifica límite de tamaño
@@ -82,11 +82,11 @@ export async function leerContexto(ruta) {
 
 ## Archivos afectados
 
-- `servidor/src/cola/ejecutores/contexto.js` — nuevo
-- `servidor/src/cola/contexto-loader.js` — nuevo
-- `servidor/src/cola/ejecutores/index.js` — conectar `contexto`
-- `servidor/package.json` — añadir `pdf-parse` si no está
-- `dashboard/components/cola-nueva-tarea.js` — selector de contexto para modo `contexto`
+- `src/servidor/src/cola/ejecutores/contexto.js` — nuevo
+- `src/servidor/src/cola/contexto-loader.js` — nuevo
+- `src/servidor/src/cola/ejecutores/index.js` — conectar `contexto`
+- `src/servidor/package.json` — añadir `pdf-parse` si no está
+- `src/dashboard/components/cola-nueva-tarea.js` — selector de contexto para modo `contexto`
 
 ## Criterios de terminado (DoD)
 
@@ -102,7 +102,7 @@ export async function leerContexto(ruta) {
 
 - **`pdf-parse` extrae texto plano pero pierde formato.** Tablas, listas, encabezados se aplanan. Para documentos muy estructurados, el resultado puede ser confuso para Claude. Documentar esta limitación.
 - **El tamaño del contexto + mensaje + tokens de sistema puede exceder el límite de Claude.** Si Claude devuelve un error de "contexto demasiado largo", capturarlo y marcarlo como error con ese mensaje específico. El usuario necesita saber por qué falló.
-- **Seguridad: verificar que `contexto_ruta` está dentro de `servidor/data/documentos/`.** Usar `path.resolve` y verificar que empieza por la ruta permitida. No permitir `../../../etc/passwd` ni nada similar.
+- **Seguridad: verificar que `contexto_ruta` está dentro de `src/servidor/data/documentos/`.** Usar `path.resolve` y verificar que empieza por la ruta permitida. No permitir `../../../etc/passwd` ni nada similar.
 
 ## Preguntas abiertas
 

@@ -57,10 +57,10 @@ Pantalla de conversación:
 
 ### En el servidor
 
-- **Ruta `/movil/`** que sirve `dashboard/movil/index.html`
+- **Ruta `/movil/`** que sirve `src/dashboard/movil/index.html`
 - **Middleware de detección mobile** que redirige automáticamente si aplica
 
-### Nueva carpeta `dashboard/movil/`
+### Nueva carpeta `src/dashboard/movil/`
 
 - **`index.html`** — entrada, carga el manifiesto y el JS
 - **`manifest.json`** — PWA manifest
@@ -74,10 +74,10 @@ La PWA no duplica la lógica de datos — llama a los mismos endpoints REST que 
 
 ## Archivos afectados
 
-- `dashboard/movil/` — nuevo (carpeta completa)
-- `servidor/src/routes/static.js` — añadir ruta `/movil/`
-- `servidor/src/plugins/mobile-detect.js` — nuevo (middleware detección)
-- `servidor/src/index.js` — registrar plugin
+- `src/dashboard/movil/` — nuevo (carpeta completa)
+- `src/servidor/src/routes/static.js` — añadir ruta `/movil/`
+- `src/servidor/src/plugins/mobile-detect.js` — nuevo (middleware detección)
+- `src/servidor/src/index.js` — registrar plugin
 
 ## Criterios de terminado (DoD)
 

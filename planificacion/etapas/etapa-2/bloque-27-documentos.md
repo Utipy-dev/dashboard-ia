@@ -19,7 +19,7 @@ No busca "leer el contenido del PDF" (eso es trabajo de la IA receptora, no del 
 
 ## Decisiones técnicas
 
-- **Archivos guardados en `servidor/data/documentos/<mensaje_id>/` .** Razón: agrupar por mensaje facilita el borrado en cascada y el backup.
+- **Archivos guardados en `src/servidor/data/documentos/<mensaje_id>/` .** Razón: agrupar por mensaje facilita el borrado en cascada y el backup.
 - **Nombres originales conservados.** Razón: si el usuario sube `contrato-v3.pdf`, que se llame así. No renombramos con hashes.
 - **Sin parseo de contenido.** Razón: parsear PDF o Office es complejidad grande para poco valor. El usuario los copia al portapapeles y los pega en la IA tal cual.
 - **Upload por drag-and-drop + botón "+".** Razón: consistencia con cómo funcionan las imágenes en etapa 1. Los usuarios ya conocen ese patrón.
@@ -48,13 +48,13 @@ No busca "leer el contenido del PDF" (eso es trabajo de la IA receptora, no del 
 
 ## Archivos afectados
 
-- `servidor/src/routes/documentos.js` — nuevo
-- `servidor/src/storage/documentos.js` — nuevo (gestión de archivos en disco)
-- `servidor/src/storage/schemas/mensaje.js` — ampliar con `documentos`
-- `servidor/package.json` — añadir `@fastify/multipart`
-- `dashboard/components/documento-chip.js` — nuevo
-- `dashboard/app.js` — handlers de drop y attach
-- `dashboard/styles.css` — zona de drop, chips de documento
+- `src/servidor/src/routes/documentos.js` — nuevo
+- `src/servidor/src/storage/documentos.js` — nuevo (gestión de archivos en disco)
+- `src/servidor/src/storage/schemas/mensaje.js` — ampliar con `documentos`
+- `src/servidor/package.json` — añadir `@fastify/multipart`
+- `src/dashboard/components/documento-chip.js` — nuevo
+- `src/dashboard/app.js` — handlers de drop y attach
+- `src/dashboard/styles.css` — zona de drop, chips de documento
 
 ## Criterios de terminado (DoD)
 
@@ -78,5 +78,5 @@ No busca "leer el contenido del PDF" (eso es trabajo de la IA receptora, no del 
 
 - **`@fastify/multipart` tiene dos modos: busboy (streaming) y body (buffer).** Usa streaming — mejor para archivos grandes.
 - **Sanear el nombre del archivo.** Rutas como `../../etc/passwd` o caracteres no válidos en Windows (`<>:"/\|?*`) deben filtrarse antes de guardar.
-- **Iconos por tipo de archivo.** Mantén una pequeña biblioteca de iconos SVG en `dashboard/assets/iconos-documento/` — pdf, doc, txt, md, xls, zip, default. No uses dependencias externas tipo "react-icons".
+- **Iconos por tipo de archivo.** Mantén una pequeña biblioteca de iconos SVG en `src/dashboard/assets/iconos-documento/` — pdf, doc, txt, md, xls, zip, default. No uses dependencias externas tipo "react-icons".
 - **El `POST` debe validar que el `mensaje_id` existe** antes de guardar el archivo, o te quedas con archivos huérfanos.

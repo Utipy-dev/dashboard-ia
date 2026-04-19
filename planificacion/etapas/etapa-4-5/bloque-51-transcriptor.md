@@ -49,7 +49,7 @@ La decisión del motor de transcripción se toma cuando llegue etapa 5. Opciones
 
 ### Historial propio
 
-- Las transcripciones se guardan en `servidor/data/transcripciones/<id>.json` con: texto, audio original (opcional), timestamps por frase, proyecto_id
+- Las transcripciones se guardan en `src/servidor/data/transcripciones/<id>.json` con: texto, audio original (opcional), timestamps por frase, proyecto_id
 - Independiente de las conversaciones con IAs — es el diario de voz/escritura del usuario
 
 ## Criterios de terminado (DoD)

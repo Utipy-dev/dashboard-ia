@@ -75,13 +75,13 @@ El servidor:
 
 ## Archivos afectados
 
-- `extension/content/content-script.js` — nuevo
-- `extension/content/toast.css` — nuevo
-- `extension/background/service-worker.js` — ampliado
-- `extension/manifest.json` — añadir `"content_scripts"` con matches configurables
-- `servidor/src/routes/captura.js` — nuevo
-- `servidor/src/storage/entities/conversaciones.js` — añadir "conversación activa"
-- `dashboard/components/conversacion-card.js` — mostrar indicador de origen
+- `src/extension/content/content-script.js` — nuevo
+- `src/extension/content/toast.css` — nuevo
+- `src/extension/background/service-worker.js` — ampliado
+- `src/extension/manifest.json` — añadir `"content_scripts"` con matches configurables
+- `src/servidor/src/routes/captura.js` — nuevo
+- `src/servidor/src/storage/entities/conversaciones.js` — añadir "conversación activa"
+- `src/dashboard/components/conversacion-card.js` — mostrar indicador de origen
 
 ## Criterios de terminado (DoD)
 

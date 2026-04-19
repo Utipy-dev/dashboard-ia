@@ -46,7 +46,7 @@ Basándote en el análisis anterior, redacta los tests unitarios para la capa de
 
 ## Qué hay que construir
 
-### `servidor/src/cola/ejecutores/continuar.js`
+### `src/servidor/src/cola/ejecutores/continuar.js`
 
 ```js
 import { construirHistorial } from '../historial-builder.js'
@@ -71,7 +71,7 @@ export async function ejecutarContinuar(tarea) {
 }
 ```
 
-### `servidor/src/cola/historial-builder.js`
+### `src/servidor/src/cola/historial-builder.js`
 
 ```js
 // Lee mensajes de una conversación, filtra los últimos N intercambios,
@@ -92,10 +92,10 @@ export async function construirHistorial(conversacionId, maxIntercambios) {
 
 ## Archivos afectados
 
-- `servidor/src/cola/ejecutores/continuar.js` — nuevo
-- `servidor/src/cola/historial-builder.js` — nuevo
-- `servidor/src/cola/ejecutores/index.js` — conectar `continuar`
-- `dashboard/components/cola-nueva-tarea.js` — selector de conversación anterior
+- `src/servidor/src/cola/ejecutores/continuar.js` — nuevo
+- `src/servidor/src/cola/historial-builder.js` — nuevo
+- `src/servidor/src/cola/ejecutores/index.js` — conectar `continuar`
+- `src/dashboard/components/cola-nueva-tarea.js` — selector de conversación anterior
 
 ## Criterios de terminado (DoD)
 

@@ -61,14 +61,14 @@ No es un truco — es el uso óptimo del recurso que pagas. Los límites de tiem
 
 ## Archivos afectados
 
-- `servidor/src/services/scheduler.js` — nuevo
-- `servidor/src/services/enviador.js` — nuevo
-- `servidor/src/routes/scheduler.js` — nuevo
-- `servidor/src/storage/schemas/mensaje.js` — campos `programado_para`, `enviado_en`, `estado`
-- `dashboard/components/modal-programar.js` — nuevo
-- `dashboard/components/pendientes-envio.js` — nuevo
-- `extension/content/content-script.js` — acción "enviar"
-- `extension/background/service-worker.js` — abrir pestañas bajo demanda
+- `src/servidor/src/services/scheduler.js` — nuevo
+- `src/servidor/src/services/enviador.js` — nuevo
+- `src/servidor/src/routes/scheduler.js` — nuevo
+- `src/servidor/src/storage/schemas/mensaje.js` — campos `programado_para`, `enviado_en`, `estado`
+- `src/dashboard/components/modal-programar.js` — nuevo
+- `src/dashboard/components/pendientes-envio.js` — nuevo
+- `src/extension/content/content-script.js` — acción "enviar"
+- `src/extension/background/service-worker.js` — abrir pestañas bajo demanda
 
 ## Criterios de terminado (DoD)
 

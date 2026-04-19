@@ -17,7 +17,7 @@ Lo importante aquí es **no cambiar nada visible**. Si el usuario nota algo dist
 
 ## Decisiones técnicas
 
-- **Reescribir `dashboard/storage/storage.js` entero, manteniendo su interfaz.** Razón: el resto del código llama a `storage.getProyectos()`, `storage.saveConversacion(...)`, etc. Si la interfaz se respeta, ni un archivo más necesita tocarse.
+- **Reescribir `src/dashboard/storage/storage.js` entero, manteniendo su interfaz.** Razón: el resto del código llama a `storage.getProyectos()`, `storage.saveConversacion(...)`, etc. Si la interfaz se respeta, ni un archivo más necesita tocarse.
 - **`fetch` nativo, sin axios ni librerías.** Razón: la API es simple, no hace falta más. Menos dependencias = menos sorpresas.
 - **Sin loading states ni spinners en este bloque.** Razón: el servidor es local, las llamadas tardan 1-2 ms. Añadir loading es sobreingeniería. Si en algún momento aparece latencia real, se añade.
 - **Eliminar File System Access del código.** Razón: dejar código muerto confunde. Se archiva en la historia de git.
@@ -25,9 +25,9 @@ Lo importante aquí es **no cambiar nada visible**. Si el usuario nota algo dist
 
 ## Qué hay que construir
 
-1. **Nuevo `dashboard/storage/storage.js`**: todas las funciones pasan a hacer `fetch` a `http://localhost:3333/api/...`. La interfaz pública (los nombres de funciones y parámetros) no cambia.
+1. **Nuevo `src/dashboard/storage/storage.js`**: todas las funciones pasan a hacer `fetch` a `http://localhost:3333/api/...`. La interfaz pública (los nombres de funciones y parámetros) no cambia.
 
-2. **Script `servidor/scripts/migrar-etapa1.js`**: lee archivos `.json` de la carpeta antigua y llama al servidor entidad por entidad, respetando dependencias (proyectos antes de conversaciones antes de mensajes).
+2. **Script `src/servidor/scripts/migrar-etapa1.js`**: lee archivos `.json` de la carpeta antigua y llama al servidor entidad por entidad, respetando dependencias (proyectos antes de conversaciones antes de mensajes).
 
 3. **Borrar el selector de carpeta en el dashboard.** La interfaz de "elegir carpeta al abrir" desaparece. El dashboard asume que el servidor está arriba. Si no está, mensaje claro de error.
 
@@ -35,11 +35,11 @@ Lo importante aquí es **no cambiar nada visible**. Si el usuario nota algo dist
 
 ## Archivos afectados
 
-- `dashboard/storage/storage.js` — reescribir
-- `dashboard/app.js` — eliminar lógica de selector de carpeta, añadir health check inicial
-- `dashboard/index.html` — quitar botón/modal de "elegir carpeta"
-- `dashboard/styles.css` — quitar estilos huérfanos
-- `servidor/scripts/migrar-etapa1.js` — nuevo
+- `src/dashboard/storage/storage.js` — reescribir
+- `src/dashboard/app.js` — eliminar lógica de selector de carpeta, añadir health check inicial
+- `src/dashboard/index.html` — quitar botón/modal de "elegir carpeta"
+- `src/dashboard/styles.css` — quitar estilos huérfanos
+- `src/servidor/scripts/migrar-etapa1.js` — nuevo
 
 ## Criterios de terminado (DoD)
 
@@ -53,7 +53,7 @@ Lo importante aquí es **no cambiar nada visible**. Si el usuario nota algo dist
 ## Cómo usarlo
 
 1. Arranca el servidor (`cd servidor && npm start`)
-2. Abre `dashboard/index.html` en Chrome
+2. Abre `src/dashboard/index.html` en Chrome
 3. Si es la primera vez y tenías datos de etapa 1: `node servidor/scripts/migrar-etapa1.js /ruta/a/datos-antiguos`
 4. El dashboard carga directamente con tus datos
 

@@ -52,16 +52,16 @@ Versión mac/linux equivalente.
 
 Además:
 
-- **`dashboard/index.html` servido por el servidor en `/`.** Razón: unificar el origen. La API está en `localhost:3333`, el HTML también. Evita CORS para el caso más común.
-- **`servidor/src/plugins/static.js`** — sirve `dashboard/` como estático.
+- **`src/dashboard/index.html` servido por el servidor en `/`.** Razón: unificar el origen. La API está en `localhost:3333`, el HTML también. Evita CORS para el caso más común.
+- **`src/servidor/src/plugins/static.js`** — sirve `src/dashboard/` como estático.
 
 ## Archivos afectados
 
-- `scripts/arrancar.bat` — nuevo
-- `scripts/arrancar.command` — nuevo
-- `scripts/arrancar.sh` — nuevo
-- `servidor/src/plugins/static.js` — nuevo
-- `servidor/src/index.js` — registrar plugin estático
+- `src/scripts/arrancar.bat` — nuevo
+- `src/scripts/arrancar.command` — nuevo
+- `src/scripts/arrancar.sh` — nuevo
+- `src/servidor/src/plugins/static.js` — nuevo
+- `src/servidor/src/index.js` — registrar plugin estático
 
 ## Criterios de terminado (DoD)
 

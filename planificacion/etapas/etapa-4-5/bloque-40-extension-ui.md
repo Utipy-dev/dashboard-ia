@@ -24,11 +24,11 @@ Chrome tiene una Side Panel API que permite mostrar una panel a la derecha de cu
 
 ## Qué hay que construir
 
-- `extension/side-panel/panel.html` — carga el dashboard del servidor
-- `extension/side-panel/panel.js` — lógica de comunicación panel ↔ content script
-- `extension/manifest.json` — añadir `side_panel` y permisos
-- `extension/background/service-worker.js` — abrir panel al clicar el icono de la extensión
-- `dashboard/` — ajustes CSS para que el layout funcione en 350px de ancho
+- `src/extension/side-panel/panel.html` — carga el dashboard del servidor
+- `src/extension/side-panel/panel.js` — lógica de comunicación panel ↔ content script
+- `src/extension/manifest.json` — añadir `side_panel` y permisos
+- `src/extension/background/service-worker.js` — abrir panel al clicar el icono de la extensión
+- `src/dashboard/` — ajustes CSS para que el layout funcione en 350px de ancho
 
 ## Criterios de terminado (DoD)
 

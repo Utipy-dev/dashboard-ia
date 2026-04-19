@@ -27,7 +27,7 @@ El modo se llama "limpio" porque no hay nada que ensuciar la solicitud: es el me
 
 ## Qué hay que construir
 
-### `servidor/src/cola/ejecutores/limpio.js`
+### `src/servidor/src/cola/ejecutores/limpio.js`
 
 ```js
 import { spawn } from 'child_process'
@@ -76,10 +76,10 @@ Al iniciar el servidor, verificar que `claude` está en PATH. Si no, loggear un 
 
 ## Archivos afectados
 
-- `servidor/src/cola/ejecutores/limpio.js` — nuevo
-- `servidor/src/cola/ejecutores/index.js` — conectar `limpio` (reemplazar stub)
-- `servidor/src/index.js` — añadir verificación de `claude` en PATH al arrancar
-- `dashboard/components/cola-tarea-activa.js` — nuevo (panel con output en vivo)
+- `src/servidor/src/cola/ejecutores/limpio.js` — nuevo
+- `src/servidor/src/cola/ejecutores/index.js` — conectar `limpio` (reemplazar stub)
+- `src/servidor/src/index.js` — añadir verificación de `claude` en PATH al arrancar
+- `src/dashboard/components/cola-tarea-activa.js` — nuevo (panel con output en vivo)
 
 ## Criterios de terminado (DoD)
 

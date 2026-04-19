@@ -34,7 +34,7 @@ El shell solo necesita: arrancar el servidor Node, mostrar un icono en la bandej
   - Windows: clave en `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`
   - macOS: `LaunchAgent` plist en `~/Library/LaunchAgents/`
   - Linux: `.desktop` en `~/.config/autostart/`
-- Actualizar `packaging/` para generar el ejecutable + instalador
+- Actualizar `src/packaging/` para generar el ejecutable + instalador
 
 ## Criterios de terminado (DoD)
 

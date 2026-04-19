@@ -59,27 +59,27 @@ GET    /api/cola/siguiente          — la siguiente tarea pendiente (usada por 
 
 ## Storage
 
-Las tareas se guardan en `servidor/data/cola/tareas.json` (array). Mismo patrón que los otros JSON: escritura atómica con `fs.rename`, mutex por archivo.
+Las tareas se guardan en `src/servidor/data/cola/tareas.json` (array). Mismo patrón que los otros JSON: escritura atómica con `fs.rename`, mutex por archivo.
 
-Alternativa evaluada: una tarea por archivo (`servidor/data/cola/<id>.json`). Descartada: más compleja de listar y más costosa de reordenar.
+Alternativa evaluada: una tarea por archivo (`src/servidor/data/cola/<id>.json`). Descartada: más compleja de listar y más costosa de reordenar.
 
 ## Qué hay que construir
 
-- **`servidor/src/storage/schemas/tarea.js`** — JSON Schema para validación
-- **`servidor/src/storage/cola.js`** — CRUD sobre `tareas.json`
-- **`servidor/src/routes/cola.js`** — endpoints REST listados arriba
-- **`servidor/src/index.js`** — registrar las rutas
-- **`dashboard/components/cola-dashboard.js`** — UI básica: lista de tareas con estado, botón "nueva tarea", reorder
-- **`dashboard/movil/pantalla-cola.js`** — versión simplificada para móvil (ver estado, no crear)
+- **`src/servidor/src/storage/schemas/tarea.js`** — JSON Schema para validación
+- **`src/servidor/src/storage/cola.js`** — CRUD sobre `tareas.json`
+- **`src/servidor/src/routes/cola.js`** — endpoints REST listados arriba
+- **`src/servidor/src/index.js`** — registrar las rutas
+- **`src/dashboard/components/cola-dashboard.js`** — UI básica: lista de tareas con estado, botón "nueva tarea", reorder
+- **`src/dashboard/movil/pantalla-cola.js`** — versión simplificada para móvil (ver estado, no crear)
 
 ## Archivos afectados
 
-- `servidor/src/storage/schemas/tarea.js` — nuevo
-- `servidor/src/storage/cola.js` — nuevo
-- `servidor/src/routes/cola.js` — nuevo
-- `servidor/src/index.js` — registrar rutas
-- `dashboard/components/cola-dashboard.js` — nuevo
-- `dashboard/movil/pantalla-cola.js` — nuevo
+- `src/servidor/src/storage/schemas/tarea.js` — nuevo
+- `src/servidor/src/storage/cola.js` — nuevo
+- `src/servidor/src/routes/cola.js` — nuevo
+- `src/servidor/src/index.js` — registrar rutas
+- `src/dashboard/components/cola-dashboard.js` — nuevo
+- `src/dashboard/movil/pantalla-cola.js` — nuevo
 
 ## Criterios de terminado (DoD)
 
